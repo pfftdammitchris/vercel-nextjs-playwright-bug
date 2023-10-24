@@ -17,7 +17,7 @@ function Gradient({
       } ${conic ? "bg-glow-conic" : ""} ${className}`}
     />
   );
-}
+}npx playwright install
 
 const LINKS = [
   {
