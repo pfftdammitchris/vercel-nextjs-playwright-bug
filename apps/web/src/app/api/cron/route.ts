@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import { type Browser, chromium } from 'playwright'
 
 export async function GET() {
-  let browser: Browser
+  let browser: Browser | undefined
 
   try {
     browser = await chromium.launch({ headless: true })
@@ -26,6 +26,6 @@ export async function GET() {
       { status: 500 },
     )
   } finally {
-    await browser.close()
+    await browser?.close()
   }
 }
